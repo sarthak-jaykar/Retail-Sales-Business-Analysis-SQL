@@ -1,6 +1,6 @@
 SELECT * FROM sales LIMIT 1;
 
-SELECT COUNT(*) AS total_orders FROM sales;
+SELECT COUNT(*) AS total_order_lines FROM sales;
 
 SELECT
     ROUND(SUM(sales),2) AS total_sales,
@@ -21,15 +21,8 @@ GROUP BY region
 ORDER BY profit DESC;
 
 SELECT
-    region,
-    ROUND(SUM(profit),2) AS profit
-FROM sales
-GROUP BY region
-ORDER BY profit DESC;
-
-SELECT
     segment,
-    COUNT(*) AS orders
+    COUNT(*) AS order_lines
 FROM sales
 GROUP BY segment;
 
