@@ -15,14 +15,14 @@ GROUP BY state
 ORDER BY total_profit DESC
 LIMIT 5;
 
--- Query 17: Average Order Value by Segment
+-- Query 17: Average Sales per Line Item by Segment
 SELECT
     segment,
     ROUND(AVG(sales),2) AS avg_sales_per_line_item
 FROM sales
 GROUP BY segment;
 
--- Query 18: Orders with Negative Profit
+-- Query 18: Line Items with Negative Profit
 SELECT COUNT(*) AS loss_making_line_items
 FROM sales
 WHERE profit < 0;
