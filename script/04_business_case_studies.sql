@@ -2,7 +2,7 @@
 --How is the business performing overall?
 
 SELECT
-    COUNT(*) AS total_orders,
+    COUNT(*) AS total_order_lines,
     ROUND(SUM(sales),2) AS total_sales,
     ROUND(SUM(profit),2) AS total_profit,
     ROUND(AVG(sales),2) AS avg_sales_per_line_item,
@@ -166,7 +166,7 @@ ORDER BY month;
 
 SELECT
     ship_mode,
-    COUNT(*) AS total_orders,
+    COUNT(*) AS total_order_lines,
     ROUND(SUM(sales),2) AS total_sales,
     ROUND(SUM(profit),2) AS total_profit
 FROM sales
@@ -174,10 +174,10 @@ GROUP BY ship_mode
 ORDER BY total_profit DESC;
 
 -- Insight:
--- Standard Class handled the highest number of orders (5,968),
+-- Standard Class handled the highest number of order lines (5,968),
 -- generated the highest sales ($1,358,215.74),
 -- and delivered the highest profit ($164,088.79).
--- Same Day shipping had the lowest order volume and profitability.
+-- Same Day shipping had the lowest order-line volume and profitability.
 
 -- Recommendation:
 -- Continue optimizing Standard Class as the primary shipping option.
