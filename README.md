@@ -2,7 +2,7 @@
 
 Where a retail business earns and loses money: regions, categories, customers, discounts, shipping, time and states. Built in PostgreSQL with 9,994 order lines from a secondary public retail dataset.
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql\&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![pgAdmin](https://img.shields.io/badge/pgAdmin-4-336791)
 ![SQL](https://img.shields.io/badge/SQL-Aggregation%20%7C%20Window%20Functions-informational)
 ![Domain](https://img.shields.io/badge/Domain-Business%20Analysis-success)
@@ -30,7 +30,7 @@ Scope covers orders from the secondary dataset. Costs other than the profit reco
 
 **Dataset:** Retail sales order lines, a public retail dataset borrowed from the internet. Labelled as a **secondary dataset from public sources**. 9,994 order lines, 21 columns, 5,009 distinct orders.
 
-**File used:** `data/sales\_data.csv` (UTF-8, included in this repository). The dataset is treated as secondary data for educational portfolio analysis.
+**File used:** `data/sales_data.csv` (UTF-8, included in this repository). The dataset is treated as secondary data for educational portfolio analysis.
 
 ## Key Metrics (9,994 order lines)
 
@@ -76,7 +76,7 @@ These are proposed actions, not proven results.
 * **PostgreSQL and pgAdmin:** a setup script creates and loads the table; four query files answer the business questions.
 * **SQL techniques:** aggregation, grouping, window functions (rank and running totals), date functions and filters.
 
-**Data model:** one table, `sales`, with one row per order line. Column names are snake\_case. Dates are stored as dates (the source uses DD-MM-YYYY).
+**Data model:** one table, `sales`, with one row per order line. Column names are snake_case. Dates are stored as dates (the source uses DD-MM-YYYY).
 
 **Definitions**
 
@@ -95,30 +95,30 @@ These are proposed actions, not proven results.
 ```text
 retail-sales-business-analysis-sql/
 ├── README.md
-├── data/                              Included source dataset (sales\_data.csv, UTF-8)
+├── data/                              Included source dataset (sales_data.csv, UTF-8)
 ├── documentation/
-│   ├── 01\_business\_brief.md           Context, stakeholders, decisions, questions
-│   ├── 02\_data\_and\_quality.md         Source, fields, quality decisions, reconciliation
-│   └── 03\_findings\_and\_recommendations.md  KPI definitions, findings, actions
+│   ├── 01_business_brief.md           Context, stakeholders, decisions, questions
+│   ├── 02_data_and_quality.md         Source, fields, quality decisions, reconciliation
+│   └── 03_findings_and_recommendations.md  KPI definitions, findings, actions
 ├── results/                           Query outputs exported from pgAdmin
 ├── screenshots/                       pgAdmin screenshots of execution and results
 └── script/
-    ├── 00\_setup/
-    │   └── 01\_create\_and\_load\_sales.sql   Creates and loads the sales table
-    ├── 01\_basic\_queries.sql
-    ├── 02\_intermediate\_queries.sql
-    ├── 03\_advanced\_queries.sql
-    └── 04\_business\_case\_studies.sql       Ten business-case questions with insights
+    ├── 00_setup/
+    │   └── 01_create_and_load_sales.sql   Creates and loads the sales table
+    ├── 01_basic_queries.sql
+    ├── 02_intermediate_queries.sql
+    ├── advanced_queries.sql
+    └── 04_business_case_studies.sql       Ten business-case questions with insights
 ```
 
 ## Analysis
 
-|Business question|Script|Output|
-|-|-|-|
-|Basic checks and totals|`script/01\_basic\_queries.sql`|`results/` (export from pgAdmin)|
-|Intermediate analysis|`script/02\_intermediate\_queries.sql`|`results/`|
-|Advanced analysis (window functions, trends, rankings)|`script/03\_advanced\_queries.sql`|`results/`|
-|Ten business-case questions|`script/04\_business\_case\_studies.sql`|`results/`|
+| Business area | SQL file | Output |
+|---|---|---|
+| Basic checks and totals | [Basic queries](script/01_basic_queries.sql) | Run in pgAdmin |
+| Intermediate analysis | [Intermediate queries](script/02_intermediate_queries.sql) | Run in pgAdmin |
+| Advanced analysis: trends, rankings and window functions | [Advanced queries](script/advanced_queries.sql) | Run in pgAdmin |
+| Ten business-case questions | [Business case studies](script/04_business_case_studies.sql) | [Case 1](results/cs1_sales_summary.csv) · [Case 2](results/cs2_regional_performance.csv) · [Case 3](results/cs3_category_performance.csv) · [Case 4](results/cs4_customer_value.csv) · [Case 5](results/cs5_lossy_products.csv) · [Case 6](results/cs6_discount_impact.csv) · [Case 7](results/cs7_monthly_sales_trend.csv) · [Case 8](results/cs8_shipping_mode.csv) · [Case 9](results/cs9_state_performance.csv) |
 
 ## Documentation
 
@@ -128,9 +128,9 @@ retail-sales-business-analysis-sql/
 
 ## How to Reproduce
 
-1. Create a PostgreSQL database named `retail\_sales` in pgAdmin.
-2. Copy the included `data/sales\_data.csv` to `C:\\retail\_sales\_raw\\sales\_data.csv` so the PostgreSQL server can read it.
-3. Run `script/00\_setup/01\_create\_and\_load\_sales.sql`, then the four analysis scripts in order.
+1. Create a PostgreSQL database named `retail_sales` in pgAdmin.
+2. Copy the included `data/sales_data.csv` to `C:\\retail_sales_raw\\sales_data.csv` so the PostgreSQL server can read it.
+3. Run `script/00_setup/01_create_and_load_sales.sql`, then the four analysis scripts in order.
 4. Export each result to `results/`.
 
 ## Limitations
@@ -142,5 +142,5 @@ retail-sales-business-analysis-sql/
 
 ## Author
 
-[Sarthak Jaykar](https://www.linkedin.com/in/sarthak-jaykar/)
+[Sarthak Jaykar](https://www.linkedin.com/in/sarthak-jaykar/) · [GitHub](https://github.com/sarthak-jaykar)
 
