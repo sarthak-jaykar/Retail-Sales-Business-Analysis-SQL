@@ -18,12 +18,12 @@ LIMIT 5;
 -- Query 17: Average Order Value by Segment
 SELECT
     segment,
-    ROUND(AVG(sales),2) AS avg_order_value
+    ROUND(AVG(sales),2) AS avg_sales_per_line_item
 FROM sales
 GROUP BY segment;
 
 -- Query 18: Orders with Negative Profit
-SELECT COUNT(*) AS loss_orders
+SELECT COUNT(*) AS loss_making_line_items
 FROM sales
 WHERE profit < 0;
 
